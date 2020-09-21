@@ -1,0 +1,40 @@
+body{
+	background-color: cadetblue;
+}
+.content-select{
+    margin: 20px auto;
+    max-width: 350px;
+	position: relative;
+}
+
+select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+.sin-resultado{
+	color: red;
+	text-align: center;
+	margin: 20px auto;
+}
+
+h1{
+	color:blue;
+	text-align: center;
+	margin: 20px auto;
+}
