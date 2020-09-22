@@ -9,7 +9,7 @@ const CardProduct = ({ title,classes,image,to,price,condition}) => {
         <Card className={classes.item}>
             <CardMedia className={classes.media} image={image}/>
             <CardContent>
-                <Link to={to}><Typography >{title}</Typography></Link>
+                <Typography >{title}</Typography>
                 <Typography >Precio: {price}</Typography>
                 <Typography >Condicion: {
                     condition === 'new' ?
@@ -19,6 +19,8 @@ const CardProduct = ({ title,classes,image,to,price,condition}) => {
                     condition = condition
                  }
                 </Typography>
+                <Link to={to}><Typography >Leer más</Typography></Link>
+                
             </CardContent>
         </Card>
     )

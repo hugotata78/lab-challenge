@@ -7,14 +7,14 @@ class Product extends Component{
         data: []
     }
     componentDidMount(){
-        const { match } = this.props
-        const title = encodeURIComponent(match.params.title )
-        axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${title}`)
+        var url = window.location.href
+        console.log(url)
+        axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${url}`)
         .then(res=>{
-            const d = res.data.results
-            console.log(d)
+            const {results} = res.data
+            
             this.setState({
-                data : d
+                data : results
             })
         })
         .catch(err=>console.log(err))
@@ -22,19 +22,19 @@ class Product extends Component{
     
     
     render(){
-        const { match } = this.props
-        const id = match.params.id
+        
         const {data} = this.state
-        const dt = data.filter(d=>{
-           return d.id == id
-        })
+        console.log(data)
+        
 
         return(
             <div>
+                
                 {
-                    dt.map(d=>{
+                    data.map(d=>{
                         return(
                             <Description 
+
                                 title={d.title} 
                                 price = {d.price}
                                 quantity = {d.available_quantity}
@@ -42,6 +42,7 @@ class Product extends Component{
                                 image={d.thumbnail} 
                                 city={d.seller_address.city.name} 
                                 state={d.seller_address.state.name}
+                                
                                 country={d.seller_address.country.name}
                                 link = {d.seller.permalink}
                             />

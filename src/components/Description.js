@@ -25,6 +25,7 @@ const Description = ({ title,price,quantity,condition, classes,image,city,state,
                         :
                         condition = condition
                     }</Typography>
+                    
                     <hr/>
                     <Typography variant='h6' component='p'>Datos del Vendedor: </Typography>
                     <Typography >Ciudad: {city}</Typography>

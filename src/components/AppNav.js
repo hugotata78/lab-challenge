@@ -127,9 +127,7 @@ export default function AppNav() {
           <div className={classes.search}>
             <form onSubmit={(e)=>{
                   e.preventDefault()
-                  if(product === ''){
-                    alert('Debe ingresar el nombre de un producto para realizar la busqueda')
-                  }
+                  window.location.reload(false)
                   
                 }}>
             <div className={classes.searchIcon}>

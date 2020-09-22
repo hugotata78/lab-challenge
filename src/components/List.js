@@ -24,7 +24,7 @@ const List = ({listaOrdenada,cond})=>{
                             return(
                                 <Grid item md={6}>
                                     <CardProduct 
-                                        to ={`/Product-Info/${d.title}/${d.id}`} 
+                                        to ={`Product/${d.permalink}`} 
                                         title = {d.title} image={d.thumbnail}
                                         price = {d.price}
                                         condition = {d.condition}
@@ -37,7 +37,7 @@ const List = ({listaOrdenada,cond})=>{
                             return(
                                 <Grid item md={6}>
                                     <CardProduct 
-                                        to ={`/Product-Info/${d.title}/${d.id}`} 
+                                        to ={`Product/${d.permalink}`} 
                                         title = {d.title} image={d.thumbnail}
                                         price = {d.price}
                                         condition = {d.condition}
