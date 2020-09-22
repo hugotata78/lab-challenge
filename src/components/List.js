@@ -21,10 +21,12 @@ const List = ({listaOrdenada,cond})=>{
                         
                         listaFiltrada && listaFiltrada.length ?
                         listaFiltrada.map(d=>{
+                            let name = d.title.split(' ').join('-')
                             return(
                                 <Grid item md={6}>
                                     <CardProduct 
-                                        to ={`Product/${d.permalink}`} 
+                                        
+                                        to ={`/Product/${name}/${d.id}`}
                                         title = {d.title} image={d.thumbnail}
                                         price = {d.price}
                                         condition = {d.condition}
@@ -34,10 +36,11 @@ const List = ({listaOrdenada,cond})=>{
                         })
                         :
                         listaOrdenada.map(d=>{
+                            let name = d.title.split(' ').join('-')
                             return(
                                 <Grid item md={6}>
                                     <CardProduct 
-                                        to ={`Product/${d.permalink}`} 
+                                        to ={`/Product/${name}/${d.id}`} 
                                         title = {d.title} image={d.thumbnail}
                                         price = {d.price}
                                         condition = {d.condition}

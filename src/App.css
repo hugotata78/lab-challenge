@@ -55,7 +55,14 @@
   border: 1px solid #61dafb;
   font-size: 16px;
 }
-
+.contenedor{
+  position: relative;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 10px;
+}
 .class-img{
   margin: 20px auto;
   width: 500px;

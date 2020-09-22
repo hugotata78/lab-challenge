@@ -114,7 +114,7 @@ export default function AppNav() {
           <Typography className={classes.title} variant="h6" noWrap>
             MercadoApp
           </Typography>
-          
+
           <Link to='/'>
             <IconButton>
                 <HomeIcon 
@@ -123,7 +123,8 @@ export default function AppNav() {
                 />
             </IconButton>
           </Link>
-          
+          <Link to='/Catalogue' className={classes.title}>Ver Catalogo</Link>
+                    
           <div className={classes.search}>
             <form onSubmit={(e)=>{
                   e.preventDefault()

@@ -12,7 +12,7 @@ import './Products.css'
 
 
 
-class Products extends Component{
+class Catalogue extends Component{
     
         
             state = {
@@ -36,7 +36,7 @@ class Products extends Component{
     getInfo = () =>{
         const {match} = this.props
         const {product} = match.params
-        axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${product}`)
+        axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=MLA`)
         .then(res=>{
             const {results} = res.data
             
@@ -73,9 +73,7 @@ class Products extends Component{
         })))]
         
         
-        listaOrdenada.map(l=>{
-            console.log(l)
-        })
+        console.log(listaOrdenada)
         return(
             <Fragment>
                 <AppNav/>
@@ -133,4 +131,4 @@ class Products extends Component{
     }    
 }
 
-export default Products
+export default Catalogue

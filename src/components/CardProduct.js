@@ -2,6 +2,7 @@ import React from 'react'
 import {Card, CardMedia,CardContent,Typography} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
+import '../App.css'
 
 const CardProduct = ({ title,classes,image,to,price,condition}) => {
     
@@ -19,7 +20,8 @@ const CardProduct = ({ title,classes,image,to,price,condition}) => {
                     condition = condition
                  }
                 </Typography>
-                <Link to={to}><Typography >Leer más</Typography></Link>
+                <a href={to}><Typography>Ver Producto</Typography></a>
+               
                 
             </CardContent>
         </Card>
