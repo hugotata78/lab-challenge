@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Description from '../components/Description'
+import AppNav from '../components/AppNav'
 import axios from 'axios'
 
 class Product extends Component{
@@ -8,14 +9,12 @@ class Product extends Component{
     }
     componentDidMount(){
         
-        var url = window.location.href.split('/')
-        var id = url.pop()
-        console.log(id)
+        
         const match = this.props.match
-        var nameProduct = match.params.name.split('-')
-        var name = nameProduct.shift()
-        console.log(name)
-        console.log(url)
+        const { name,id } = match.params
+        
+        const nameProduct = name.split('-').join(' ')
+        console.log(id)
         
         axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${nameProduct}`)
         .then(res=>{
@@ -39,7 +38,9 @@ class Product extends Component{
             <div>
                 
                 {
+                    data && data.length ?
                     data.map(d=>{
+                        let img = d.thumbnail.replace('I.jpg','B.jpg')
                         return(
                             <Description 
 
@@ -47,7 +48,7 @@ class Product extends Component{
                                 price = {d.price}
                                 quantity = {d.available_quantity}
                                 condition = {d.condition}
-                                image={d.thumbnail} 
+                                image={img} 
                                 city={d.seller_address.city.name} 
                                 state={d.seller_address.state.name}
                                 
@@ -56,6 +57,11 @@ class Product extends Component{
                             />
                         )
                     })
+                    :
+                    <div>
+                        <AppNav/>
+                        <h1 className='sin-resultado'>No se puede obtener Información de esta Producto</h1>
+                    </div>
                 }                
             </div>
             

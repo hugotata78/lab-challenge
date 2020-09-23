@@ -45,7 +45,7 @@ export default withStyles({
         margin: '10xp auto',
         padding: '10px',
         maxWidth: '90%',
-        height: '450px'
+        height: '400px'
     }
 })
 (CardProduct)

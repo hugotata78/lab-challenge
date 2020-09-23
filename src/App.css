@@ -68,3 +68,14 @@
   width: 500px;
   height: 400px;
 }
+.catalogo{
+  color: whitesmoke;
+  font-size: 20;
+  margin: 10px;
+  padding: 5px;
+}
+
+.catalogo:hover{
+  color: black;
+  cursor: pointer;
+}

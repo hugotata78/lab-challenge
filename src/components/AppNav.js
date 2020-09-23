@@ -10,10 +10,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
-//import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-
+import '../App.css'
 function HomeIcon(props) {
     return (
       <SvgIcon {...props}>
@@ -123,7 +120,8 @@ export default function AppNav() {
                 />
             </IconButton>
           </Link>
-          <Link to='/Catalogue' className={classes.title}>Ver Catalogo</Link>
+          
+          <Link to='/Catalogue' className='catalogo'>Ver Catalogo</Link>
                     
           <div className={classes.search}>
             <form onSubmit={(e)=>{

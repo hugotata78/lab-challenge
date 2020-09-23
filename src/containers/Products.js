@@ -73,9 +73,7 @@ class Products extends Component{
         })))]
         
         
-        listaOrdenada.map(l=>{
-            console.log(l)
-        })
+        
         return(
             <Fragment>
                 <AppNav/>
