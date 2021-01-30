@@ -18,7 +18,7 @@ import { useHistory, useLocation, useParams } from 'react-router-dom/cjs/react-r
 
 const Products = ()=>{
     
-    //const [products,setProducts] = useState([])
+   // const [products,setProducts] = useState([])
     const dispatch = useDispatch()
     
     const products = useSelector(state=>state.reducer.products)
@@ -27,10 +27,7 @@ const Products = ()=>{
     const {query} = useParams()
     
     console.log(query)
-    useEffect(()=>{
-        dispatch(getProducts(query))
-          
-    },[getProducts])
+    
     console.log(products)
     return(
         <div>

@@ -131,12 +131,7 @@ export default function AppNav({ onSearch }) {
           <Link to='/Catalogue' className='catalogo'>Ver Catalogo</Link>
                     
           <div className={classes.search}>
-            <form onSubmit={e=>{
-              
-              e.preventDefault()
-              window.location.reload(false)
-
-            }}>
+            <form >
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -150,17 +145,24 @@ export default function AppNav({ onSearch }) {
               inputProps={{ 'aria-label': 'search' }}
             />
             
-              <Link to={`/search/${query}`}>
+              
                 <Button 
                 
                 variant="contained" 
                 color="secondary" 
                 className={classes.searchButton}
+                onClick={e=>{
+              
+                  e.preventDefault()
+                  dispatch(getProducts(query))
+                  history.push(`/search/${query}`)
+    
+                }}
                                 
               >
                 Buscar
               </Button>
-              </Link> 
+              
             
             
             </form>
